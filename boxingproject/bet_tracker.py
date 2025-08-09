@@ -1,10 +1,11 @@
-"""Simple bet tracking utilities."""
+"""Simple bet tracking utilities using only the standard library."""
 from __future__ import annotations
 
+import csv
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-import pandas as pd
+from typing import List
 
 
 @dataclass
@@ -19,33 +20,66 @@ class Bet:
 
 
 class BetTracker:
-    """Track bets in a CSV file."""
+    """Track bets in a CSV file using only the standard library."""
 
     def __init__(self, filepath: str | Path | None = None) -> None:
         self.filepath = Path(filepath) if filepath else Path(__file__).with_name("bets.csv")
+        self.bets: List[Bet] = []
+
         if self.filepath.exists():
-            self.bets = pd.read_csv(self.filepath)
-        else:
-            self.bets = pd.DataFrame(columns=[
-                "date", "fighter", "odds", "stake", "bookmaker", "result", "payout"
-            ])
+            with self.filepath.open(newline="") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    self.bets.append(
+                        Bet(
+                            datetime.fromisoformat(row["date"]),
+                            row["fighter"],
+                            float(row["odds"]),
+                            float(row["stake"]),
+                            row["bookmaker"],
+                            row.get("result") or None,
+                            float(row["payout"]) if row.get("payout") else None,
+                        )
+                    )
 
     def add_bet(self, bet: Bet) -> None:
-        row = {
-            "date": bet.date.isoformat(),
-            "fighter": bet.fighter,
-            "odds": bet.odds,
-            "stake": bet.stake,
-            "bookmaker": bet.bookmaker,
-            "result": bet.result,
-            "payout": bet.payout,
-        }
-        self.bets = pd.concat([self.bets, pd.DataFrame([row])], ignore_index=True)
-        self.bets.to_csv(self.filepath, index=False)
+        """Append a bet to the CSV file and in-memory list."""
+        self.bets.append(bet)
+        write_header = not self.filepath.exists()
+        with self.filepath.open("a", newline="") as f:
+            writer = csv.writer(f)
+            if write_header:
+                writer.writerow(["date", "fighter", "odds", "stake", "bookmaker", "result", "payout"])
+            writer.writerow([
+                bet.date.isoformat(),
+                bet.fighter,
+                bet.odds,
+                bet.stake,
+                bet.bookmaker,
+                bet.result or "",
+                bet.payout if bet.payout is not None else "",
+            ])
 
-    def summary(self) -> pd.DataFrame:
-        """Return a summary of profits and losses."""
-        df = self.bets.copy()
-        df["payout"].fillna(0, inplace=True)
-        df["profit"] = df["payout"] - df["stake"]
-        return df
+    def summary(self) -> List[dict]:
+        """Return bet history with individual profits and total."""
+        rows: List[dict] = []
+        total = 0.0
+        for b in self.bets:
+            payout = b.payout or 0.0
+            profit = payout - b.stake
+            total += profit
+            rows.append(
+                {
+                    "date": b.date.strftime("%Y-%m-%d"),
+                    "fighter": b.fighter,
+                    "odds": b.odds,
+                    "stake": b.stake,
+                    "bookmaker": b.bookmaker,
+                    "result": b.result or "",
+                    "payout": payout,
+                    "profit": round(profit, 2),
+                }
+            )
+        rows.append({"date": "TOTAL", "profit": round(total, 2)})
+        return rows
+
