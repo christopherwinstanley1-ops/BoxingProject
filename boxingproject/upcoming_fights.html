@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Upcoming Fights</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --bg: #0f1220; --card: #141a33; --muted: #9fb0d1; --line: #233157;
+    --brand: #ffcc00; --accent: #00ffd0; --text: #e8ecf3;
+  }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: Segoe UI, system-ui, -apple-system, Arial; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .title { font-size: 22px; font-weight: 800; color: var(--brand); }
+  .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 32px 0 12px; font-size: 18px; color: var(--brand); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px,1fr)); gap: 16px; }
+  .fight-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 28px rgba(0,0,0,.25); padding: 16px; display: flex; flex-direction: column; gap: 12px;
+  }
+  .fight-top { display: grid; gap: 6px; }
+  .fight-date { color: var(--muted); font-size: 13px; }
+  .fight-matchup { font-size: 18px; font-weight: 700; color: #cdd9ff; }
+  .fight-odds { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; }
+  .side { text-decoration: none; color: inherit; padding: 10px; border-radius: 10px; border: 1px solid transparent; transition: 0.2s; }
+  .side:hover { background: #0f1a3a; border-color: var(--line); }
+  .side .name { font-weight: 700; margin-bottom: 4px; }
+  .side .price { color: var(--accent); margin-bottom: 2px; }
+  .side .book { color: var(--muted); font-size: 13px; }
+  .vs { font-weight: 800; color: var(--muted); }
+  footer { margin-top: 32px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="title">Upcoming Fights</div>
+        <div class="sub">Click a fighter to view profile. Times in UTC.</div>
+      </div>
+    </header>
+    
+    <section>
+      <h2>2025-08-16</h2>
+      <div class="grid">
+        
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-16 · 19:00 UTC</div>
+        <div class="fight-matchup">Moses Itauma vs Dillian Whyte</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Moses+Itauma&matchup=Moses+Itauma+vs+Dillian+Whyte&date=2025-08-16">
+          <div class="name">Moses Itauma</div>
+          <div class="price">Best <b>1.14</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Dillian+Whyte&matchup=Moses+Itauma+vs+Dillian+Whyte&date=2025-08-16">
+          <div class="name">Dillian Whyte</div>
+          <div class="price">Best <b>9.00</b></div>
+          <div class="book">LowVig.ag</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-16 · 15:00 UTC</div>
+        <div class="fight-matchup">Nick Ball vs Sam Goodman</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Nick+Ball&matchup=Nick+Ball+vs+Sam+Goodman&date=2025-08-16">
+          <div class="name">Nick Ball</div>
+          <div class="price">Best <b>1.25</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Sam+Goodman&matchup=Nick+Ball+vs+Sam+Goodman&date=2025-08-16">
+          <div class="name">Sam Goodman</div>
+          <div class="price">Best <b>5.10</b></div>
+          <div class="book">FanDuel</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-16 · 15:00 UTC</div>
+        <div class="fight-matchup">Raymond Ford vs Abraham Nova</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Raymond+Ford&matchup=Raymond+Ford+vs+Abraham+Nova&date=2025-08-16">
+          <div class="name">Raymond Ford</div>
+          <div class="price">Best <b>1.15</b></div>
+          <div class="book">Virgin Bet</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Abraham+Nova&matchup=Raymond+Ford+vs+Abraham+Nova&date=2025-08-16">
+          <div class="name">Abraham Nova</div>
+          <div class="price">Best <b>8.00</b></div>
+          <div class="book">LowVig.ag</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-16 · 15:00 UTC</div>
+        <div class="fight-matchup">Hayato Tsutsumi vs Qais Ashfaq</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Hayato+Tsutsumi&matchup=Hayato+Tsutsumi+vs+Qais+Ashfaq&date=2025-08-16">
+          <div class="name">Hayato Tsutsumi</div>
+          <div class="price">Best <b>1.03</b></div>
+          <div class="book">888sport</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Qais+Ashfaq&matchup=Hayato+Tsutsumi+vs+Qais+Ashfaq&date=2025-08-16">
+          <div class="name">Qais Ashfaq</div>
+          <div class="price">Best <b>34.00</b></div>
+          <div class="book">Virgin Bet</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-16 · 15:00 UTC</div>
+        <div class="fight-matchup">Filip Hrgović vs David Adeleye</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Filip+Hrgovi%C4%87&matchup=Filip+Hrgovi%C4%87+vs+David+Adeleye&date=2025-08-16">
+          <div class="name">Filip Hrgović</div>
+          <div class="price">Best <b>1.24</b></div>
+          <div class="book">Virgin Bet</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=David+Adeleye&matchup=Filip+Hrgovi%C4%87+vs+David+Adeleye&date=2025-08-16">
+          <div class="name">David Adeleye</div>
+          <div class="price">Best <b>6.40</b></div>
+          <div class="book">Betfair</div>
+        </a>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+    <section>
+      <h2>2025-08-24</h2>
+      <div class="grid">
+        
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-24 · 02:00 UTC</div>
+        <div class="fight-matchup">Yankiel Rivera Figueroa vs Angelino Cordova</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Yankiel+Rivera+Figueroa&matchup=Yankiel+Rivera+Figueroa+vs+Angelino+Cordova&date=2025-08-24">
+          <div class="name">Yankiel Rivera Figueroa</div>
+          <div class="price">Best <b>1.13</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Angelino+Cordova&matchup=Yankiel+Rivera+Figueroa+vs+Angelino+Cordova&date=2025-08-24">
+          <div class="name">Angelino Cordova</div>
+          <div class="price">Best <b>7.00</b></div>
+          <div class="book">DraftKings</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-24 · 03:00 UTC</div>
+        <div class="fight-matchup">Yoenis Tellez vs Abass Barou</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Yoenis+Tellez&matchup=Yoenis+Tellez+vs+Abass+Barou&date=2025-08-24">
+          <div class="name">Yoenis Tellez</div>
+          <div class="price">Best <b>1.17</b></div>
+          <div class="book">Paddy Power</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Abass+Barou&matchup=Yoenis+Tellez+vs+Abass+Barou&date=2025-08-24">
+          <div class="name">Abass Barou</div>
+          <div class="price">Best <b>6.60</b></div>
+          <div class="book">BetUS</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-08-24 · 01:00 UTC</div>
+        <div class="fight-matchup">Jamaine Ortiz vs Steve Claggett</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Jamaine+Ortiz&matchup=Jamaine+Ortiz+vs+Steve+Claggett&date=2025-08-24">
+          <div class="name">Jamaine Ortiz</div>
+          <div class="price">Best <b>1.22</b></div>
+          <div class="book">BetOnline.ag</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Steve+Claggett&matchup=Jamaine+Ortiz+vs+Steve+Claggett&date=2025-08-24">
+          <div class="name">Steve Claggett</div>
+          <div class="price">Best <b>5.73</b></div>
+          <div class="book">1xBet</div>
+        </a>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+    <section>
+      <h2>2025-09-14</h2>
+      <div class="grid">
+        
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-09-14 · 10:00 UTC</div>
+        <div class="fight-matchup">Naoya Inoue vs Murodjon Akhmadaliev</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Naoya+Inoue&matchup=Naoya+Inoue+vs+Murodjon+Akhmadaliev&date=2025-09-14">
+          <div class="name">Naoya Inoue</div>
+          <div class="price">Best <b>1.13</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Murodjon+Akhmadaliev&matchup=Naoya+Inoue+vs+Murodjon+Akhmadaliev&date=2025-09-14">
+          <div class="name">Murodjon Akhmadaliev</div>
+          <div class="price">Best <b>7.60</b></div>
+          <div class="book">888sport</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-09-14 · 01:34 UTC</div>
+        <div class="fight-matchup">Canelo Álvarez vs Terence Crawford</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Canelo+%C3%81lvarez&matchup=Canelo+%C3%81lvarez+vs+Terence+Crawford&date=2025-09-14">
+          <div class="name">Canelo Álvarez</div>
+          <div class="price">Best <b>1.64</b></div>
+          <div class="book">1xBet</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Terence+Crawford&matchup=Canelo+%C3%81lvarez+vs+Terence+Crawford&date=2025-09-14">
+          <div class="name">Terence Crawford</div>
+          <div class="price">Best <b>2.74</b></div>
+          <div class="book">Betfair</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-09-14 · 08:00 UTC</div>
+        <div class="fight-matchup">Yoshiki Takei vs Christian Medina Jimenez</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Yoshiki+Takei&matchup=Yoshiki+Takei+vs+Christian+Medina+Jimenez&date=2025-09-14">
+          <div class="name">Yoshiki Takei</div>
+          <div class="price">Best <b>1.18</b></div>
+          <div class="book">888sport</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Christian+Medina+Jimenez&matchup=Yoshiki+Takei+vs+Christian+Medina+Jimenez&date=2025-09-14">
+          <div class="name">Christian Medina Jimenez</div>
+          <div class="price">Best <b>6.40</b></div>
+          <div class="book">1xBet</div>
+        </a>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+    <section>
+      <h2>2025-09-20</h2>
+      <div class="grid">
+        
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-09-20 · 16:00 UTC</div>
+        <div class="fight-matchup">Chris Eubank Jr vs Conor Benn</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Chris+Eubank+Jr&matchup=Chris+Eubank+Jr+vs+Conor+Benn&date=2025-09-20">
+          <div class="name">Chris Eubank Jr</div>
+          <div class="price">Best <b>1.54</b></div>
+          <div class="book">DraftKings</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Conor+Benn&matchup=Chris+Eubank+Jr+vs+Conor+Benn&date=2025-09-20">
+          <div class="name">Conor Benn</div>
+          <div class="price">Best <b>2.75</b></div>
+          <div class="book">Coral</div>
+        </a>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+    <section>
+      <h2>2025-11-15</h2>
+      <div class="grid">
+        
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-11-15 · 22:00 UTC</div>
+        <div class="fight-matchup">Chris Eubank Jr vs Conor Benn</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Chris+Eubank+Jr&matchup=Chris+Eubank+Jr+vs+Conor+Benn&date=2025-11-15">
+          <div class="name">Chris Eubank Jr</div>
+          <div class="price">Best <b>1.63</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Conor+Benn&matchup=Chris+Eubank+Jr+vs+Conor+Benn&date=2025-11-15">
+          <div class="name">Conor Benn</div>
+          <div class="price">Best <b>2.74</b></div>
+          <div class="book">Betfair</div>
+        </a>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+    <section>
+      <h2>2025-11-22</h2>
+      <div class="grid">
+        
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-11-22 · 20:00 UTC</div>
+        <div class="fight-matchup">Abdullah Mason vs Sam Noakes</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Abdullah+Mason&matchup=Abdullah+Mason+vs+Sam+Noakes&date=2025-11-22">
+          <div class="name">Abdullah Mason</div>
+          <div class="price">Best <b>1.25</b></div>
+          <div class="book">1xBet</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Sam+Noakes&matchup=Abdullah+Mason+vs+Sam+Noakes&date=2025-11-22">
+          <div class="name">Sam Noakes</div>
+          <div class="price">Best <b>4.81</b></div>
+          <div class="book">Pinnacle</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-11-22 · 23:00 UTC</div>
+        <div class="fight-matchup">David Benavidez vs Anthony Yarde</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=David+Benavidez&matchup=David+Benavidez+vs+Anthony+Yarde&date=2025-11-22">
+          <div class="name">David Benavidez</div>
+          <div class="price">Best <b>1.13</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Anthony+Yarde&matchup=David+Benavidez+vs+Anthony+Yarde&date=2025-11-22">
+          <div class="name">Anthony Yarde</div>
+          <div class="price">Best <b>9.00</b></div>
+          <div class="book">LowVig.ag</div>
+        </a>
+      </div>
+    </div>
+    
+
+    <div class="fight-card">
+      <div class="fight-top">
+        <div class="fight-date">2025-11-22 · 22:00 UTC</div>
+        <div class="fight-matchup">Brian Norman Jr vs Devin Haney</div>
+      </div>
+      <div class="fight-odds">
+        <a class="side" href="fighter_profile.html?id=&fighter=Brian+Norman+Jr&matchup=Brian+Norman+Jr+vs+Devin+Haney&date=2025-11-22">
+          <div class="name">Brian Norman Jr</div>
+          <div class="price">Best <b>1.90</b></div>
+          <div class="book">Betfair</div>
+        </a>
+        <div class="vs">vs</div>
+        <a class="side" href="fighter_profile.html?id=&fighter=Devin+Haney&matchup=Brian+Norman+Jr+vs+Devin+Haney&date=2025-11-22">
+          <div class="name">Devin Haney</div>
+          <div class="price">Best <b>2.19</b></div>
+          <div class="book">1xBet</div>
+        </a>
+      </div>
+    </div>
+    
+      </div>
+    </section>
+    
+    <footer>Generated: 2025-08-09 09:41:19 UTC · Data: odds_history (latest per book)</footer>
+  </div>
+</body>
+</html>

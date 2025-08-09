@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Fighter Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --bg: #0f1220; --card: #141a33; --muted: #9fb0d1; --line: #233157;
+    --brand: #ffcc00; --accent: #00ffd0; --text: #e8ecf3;
+  }
+  body { margin:0; background:var(--bg); color:var(--text); font-family: Segoe UI, system-ui, -apple-system, Arial; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header { display:flex; align-items:center; justify-content:space-between; margin-bottom: 18px; }
+  .title { font-size: 22px; font-weight: 800; color: var(--brand); }
+  a.back { color:#cdd9ff; text-decoration:none; background:#1f2a52; padding:10px 14px; border-radius:10px; border:1px solid var(--line); }
+  .grid { display:grid; grid-template-columns: 320px 1fr; gap:18px; }
+  .card { background: var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:0 12px 28px rgba(0,0,0,.25); padding:16px; }
+  .pic { width:100%; aspect-ratio: 3/4; background: linear-gradient(180deg, #2b335e, #192044); border-radius:12px; display:flex; align-items:center; justify-content:center; color:#9fb0d1; font-weight:700; }
+  .cap { color:var(--muted); font-size:13px; margin-top:8px; }
+  .name { font-size: 26px; font-weight: 800; color:#cdd9ff; }
+  .meta { color: var(--muted); margin-bottom: 10px; }
+  .statgrid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .stat { background:#0f1a3a; border:1px solid var(--line); padding:10px; border-radius:10px; text-align:center; }
+  .stat .lab { color:#9fb0d1; font-size:12px; }
+  .stat .val { font-size:18px; font-weight:800; color:#e8ecf3; }
+  .match-card { margin-top:16px; }
+  .match-top { font-weight:700; margin-bottom:6px; color:#cdd9ff; }
+  .odds { display:flex; gap:12px; align-items:center; color:#9fb0d1; }
+  .odds b { color:#00ffd0; }
+  .subtle { color:#9fb0d1; font-size:13px; }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">Fighter Profile</div>
+      <a class="back" href="upcoming_fights.html">← Back to Upcoming</a>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div id="photo" class="pic">No Photo</div>
+        <div id="photoCaption" class="cap"></div>
+      </div>
+
+      <div class="card">
+        <div class="name" id="fighterName">Fighter Name</div>
+        <div class="meta" id="metaLine">Division · Stance · Nationality · Age</div>
+
+        <div class="statgrid">
+          <div class="stat"><div class="lab">Record</div><div class="val" id="record">—</div></div>
+          <div class="stat"><div class="lab">Height</div><div class="val" id="height">—</div></div>
+          <div class="stat"><div class="lab">Reach</div><div class="val" id="reach">—</div></div>
+        </div>
+
+        <div class="match-card">
+          <div class="match-top" id="matchup">Upcoming: —</div>
+          <div class="odds">Best price: <b id="bestPrice">—</b> at <span id="bestBook">—</span></div>
+          <div class="subtle" id="fightDate">Date: —</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Read params (?id=...&fighter=...&matchup=...&date=...)
+  const p = new URLSearchParams(window.location.search);
+  const id = p.get('id') || '';
+  const fighterName = p.get('fighter') || '';
+  const matchup = p.get('matchup') || '';
+  const date = p.get('date') || '';
+
+  // Populate the static bits immediately
+  document.getElementById('fighterName').textContent = fighterName || 'Fighter';
+  document.getElementById('matchup').textContent = matchup ? ('Upcoming: ' + matchup) : 'Upcoming: —';
+  document.getElementById('fightDate').textContent = date ? ('Date: ' + date) : 'Date: —';
+
+  // Small helper
+  const setText = (id, v) => document.getElementById(id).textContent = v ?? '—';
+
+  async function loadProfile(fid) {
+    if (!fid) {
+      document.getElementById('photoCaption').textContent = "No fighter ID provided.";
+      return;
+    }
+    try {
+      // 1) profile
+      const profRes = await fetch(`/api/fighters/${fid}`);
+      if (!profRes.ok) throw new Error("profile not found");
+      const f = await profRes.json();
+
+      const metaBits = [
+        f.division_name || '—',
+        f.stance || '—',
+        f.nationality || '—',
+        (f.age ?? '—')
+      ].filter(Boolean).join(' · ');
+      setText('metaLine', metaBits);
+
+      setText('record', `${f.wins ?? '—'}-${f.losses ?? '—'}-${f.draws ?? '—'} (${f.ko_percentage ?? '—'}% KO)`);
+      setText('height', f.height || '—');
+      setText('reach',  f.reach  || '—');
+
+      // Optional: show image if you add photo_url to fighters
+      if (f.photo_url) {
+        const img = new Image();
+        img.src = f.photo_url;
+        img.alt = f.name;
+        img.style.width = "100%";
+        img.style.height = "100%";
+        img.style.objectFit = "cover";
+        img.style.borderRadius = "12px";
+        const ph = document.getElementById('photo');
+        ph.innerHTML = "";
+        ph.appendChild(img);
+        document.getElementById('photoCaption').textContent = "";
+      } else {
+        document.getElementById('photoCaption').textContent = "No image yet.";
+      }
+
+      // 2) bouts
+      const boutsRes = await fetch(`/api/fighters/${fid}/bouts?limit=25`);
+      const bouts = boutsRes.ok ? await boutsRes.json() : [];
+      // You can render a table here; for now just log:
+      console.log("Recent bouts:", bouts);
+    } catch (e) {
+      console.error(e);
+      document.getElementById('photoCaption').textContent = "Could not load profile.";
+    }
+  }
+
+  loadProfile(id);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,704 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Value Finder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        table {
+            width: 95%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        th {
+            background: #1f2937;
+            color: white;
+            padding: 10px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover td {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h2>Best Boxing Odds</h2>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Fight Date</th>
+      <th>Matchup</th>
+      <th>Fighter</th>
+      <th>Best Bookmaker</th>
+      <th>Best Odds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Filip Hrgović vs David Adeleye</td>
+      <td>David Adeleye</td>
+      <td>Betfair</td>
+      <td>7.20</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Filip Hrgović vs David Adeleye</td>
+      <td>Filip Hrgović</td>
+      <td>Virgin Bet</td>
+      <td>1.24</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Hayato Tsutsumi vs Qais Ashfaq</td>
+      <td>Hayato Tsutsumi</td>
+      <td>Betfair</td>
+      <td>1.05</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Hayato Tsutsumi vs Qais Ashfaq</td>
+      <td>Qais Ashfaq</td>
+      <td>Betfair</td>
+      <td>1000.00</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Moses Itauma vs Dillian Whyte</td>
+      <td>Dillian Whyte</td>
+      <td>Betfair</td>
+      <td>9.20</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Moses Itauma vs Dillian Whyte</td>
+      <td>Moses Itauma</td>
+      <td>Betfair</td>
+      <td>1.16</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Nick Ball vs Sam Goodman</td>
+      <td>Nick Ball</td>
+      <td>Betfair</td>
+      <td>1.33</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Nick Ball vs Sam Goodman</td>
+      <td>Sam Goodman</td>
+      <td>Betfair</td>
+      <td>6.60</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Raymond Ford vs Abraham Nova</td>
+      <td>Abraham Nova</td>
+      <td>Betfair</td>
+      <td>9.80</td>
+    </tr>
+    <tr>
+      <td>2025-08-16</td>
+      <td>Raymond Ford vs Abraham Nova</td>
+      <td>Raymond Ford</td>
+      <td>Betfair</td>
+      <td>1.24</td>
+    </tr>
+    <tr>
+      <td>2025-08-24</td>
+      <td>Jamaine Ortiz vs Steve Claggett</td>
+      <td>Jamaine Ortiz</td>
+      <td>Betfair</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <td>2025-08-24</td>
+      <td>Jamaine Ortiz vs Steve Claggett</td>
+      <td>Steve Claggett</td>
+      <td>Betfair</td>
+      <td>1000.00</td>
+    </tr>
+    <tr>
+      <td>2025-08-24</td>
+      <td>Yankiel Rivera Figueroa vs Angelino Cordova</td>
+      <td>Angelino Cordova</td>
+      <td>Betfair</td>
+      <td>1000.00</td>
+    </tr>
+    <tr>
+      <td>2025-08-24</td>
+      <td>Yankiel Rivera Figueroa vs Angelino Cordova</td>
+      <td>Yankiel Rivera Figueroa</td>
+      <td>Betfair</td>
+      <td>1.22</td>
+    </tr>
+    <tr>
+      <td>2025-08-24</td>
+      <td>Yoenis Tellez vs Abass Barou</td>
+      <td>Abass Barou</td>
+      <td>Betfair</td>
+      <td>1000.00</td>
+    </tr>
+    <tr>
+      <td>2025-08-24</td>
+      <td>Yoenis Tellez vs Abass Barou</td>
+      <td>Yoenis Tellez</td>
+      <td>Betfair</td>
+      <td>1.31</td>
+    </tr>
+    <tr>
+      <td>2025-09-14</td>
+      <td>Canelo Álvarez vs Terence Crawford</td>
+      <td>Canelo Álvarez</td>
+      <td>Betfair</td>
+      <td>1.66</td>
+    </tr>
+    <tr>
+      <td>2025-09-14</td>
+      <td>Canelo Álvarez vs Terence Crawford</td>
+      <td>Terence Crawford</td>
+      <td>Betfair</td>
+      <td>2.82</td>
+    </tr>
+    <tr>
+      <td>2025-09-14</td>
+      <td>Naoya Inoue vs Murodjon Akhmadaliev</td>
+      <td>Murodjon Akhmadaliev</td>
+      <td>Betfair</td>
+      <td>13.50</td>
+    </tr>
+    <tr>
+      <td>2025-09-14</td>
+      <td>Naoya Inoue vs Murodjon Akhmadaliev</td>
+      <td>Naoya Inoue</td>
+      <td>Betfair</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <td>2025-09-14</td>
+      <td>Yoshiki Takei vs Christian Medina Jimenez</td>
+      <td>Christian Medina Jimenez</td>
+      <td>Betfair</td>
+      <td>21.00</td>
+    </tr>
+    <tr>
+      <td>2025-09-14</td>
+      <td>Yoshiki Takei vs Christian Medina Jimenez</td>
+      <td>Yoshiki Takei</td>
+      <td>Betfair</td>
+      <td>1.31</td>
+    </tr>
+    <tr>
+      <td>2025-09-20</td>
+      <td>Chris Eubank Jr vs Conor Benn</td>
+      <td>Chris Eubank Jr</td>
+      <td>DraftKings</td>
+      <td>1.54</td>
+    </tr>
+    <tr>
+      <td>2025-09-20</td>
+      <td>Chris Eubank Jr vs Conor Benn</td>
+      <td>Conor Benn</td>
+      <td>Coral</td>
+      <td>2.75</td>
+    </tr>
+    <tr>
+      <td>2025-11-15</td>
+      <td>Chris Eubank Jr vs Conor Benn</td>
+      <td>Chris Eubank Jr</td>
+      <td>Betfair</td>
+      <td>1.70</td>
+    </tr>
+    <tr>
+      <td>2025-11-15</td>
+      <td>Chris Eubank Jr vs Conor Benn</td>
+      <td>Conor Benn</td>
+      <td>Betfair</td>
+      <td>3.00</td>
+    </tr>
+    <tr>
+      <td>2025-11-22</td>
+      <td>Abdullah Mason vs Sam Noakes</td>
+      <td>Abdullah Mason</td>
+      <td>Betfair</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <td>2025-11-22</td>
+      <td>Abdullah Mason vs Sam Noakes</td>
+      <td>Sam Noakes</td>
+      <td>Betfair</td>
+      <td>1000.00</td>
+    </tr>
+    <tr>
+      <td>2025-11-22</td>
+      <td>Brian Norman Jr vs Devin Haney</td>
+      <td>Brian Norman Jr</td>
+      <td>Betfair</td>
+      <td>2.08</td>
+    </tr>
+    <tr>
+      <td>2025-11-22</td>
+      <td>Brian Norman Jr vs Devin Haney</td>
+      <td>Devin Haney</td>
+      <td>Betfair</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <td>2025-11-22</td>
+      <td>David Benavidez vs Anthony Yarde</td>
+      <td>Anthony Yarde</td>
+      <td>Betfair</td>
+      <td>9.00</td>
+    </tr>
+    <tr>
+      <td>2025-11-22</td>
+      <td>David Benavidez vs Anthony Yarde</td>
+      <td>David Benavidez</td>
+      <td>Betfair</td>
+      <td>1.21</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Deontay Wilder</td>
+      <td>Anthony Joshua</td>
+      <td>Virgin Bet</td>
+      <td>1.42</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Deontay Wilder</td>
+      <td>Deontay Wilder</td>
+      <td>Virgin Bet</td>
+      <td>2.80</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Filip Hrgović</td>
+      <td>Anthony Joshua</td>
+      <td>LiveScore Bet</td>
+      <td>1.10</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Filip Hrgović</td>
+      <td>Filip Hrgović</td>
+      <td>LiveScore Bet</td>
+      <td>7.50</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Joseph Parker</td>
+      <td>Anthony Joshua</td>
+      <td>Virgin Bet</td>
+      <td>2.10</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Joseph Parker</td>
+      <td>Joseph Parker</td>
+      <td>Virgin Bet</td>
+      <td>1.71</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Zhilei Zhang</td>
+      <td>Anthony Joshua</td>
+      <td>Virgin Bet</td>
+      <td>1.93</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Anthony Joshua vs Zhilei Zhang</td>
+      <td>Zhilei Zhang</td>
+      <td>Virgin Bet</td>
+      <td>1.85</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Artur Beterbiev vs Canelo Álvarez</td>
+      <td>Artur Beterbiev</td>
+      <td>Virgin Bet</td>
+      <td>1.26</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Artur Beterbiev vs Canelo Álvarez</td>
+      <td>Canelo Álvarez</td>
+      <td>Virgin Bet</td>
+      <td>3.85</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Artur Beterbiev vs David Benavidez</td>
+      <td>Artur Beterbiev</td>
+      <td>Virgin Bet</td>
+      <td>1.34</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Artur Beterbiev vs David Benavidez</td>
+      <td>David Benavidez</td>
+      <td>Virgin Bet</td>
+      <td>3.20</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Canelo Álvarez vs Caleb Plant</td>
+      <td>Caleb Plant</td>
+      <td>Virgin Bet</td>
+      <td>5.10</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Canelo Álvarez vs Caleb Plant</td>
+      <td>Canelo Álvarez</td>
+      <td>Virgin Bet</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Canelo Álvarez vs David Benavidez</td>
+      <td>Canelo Álvarez</td>
+      <td>Virgin Bet</td>
+      <td>1.81</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Canelo Álvarez vs David Benavidez</td>
+      <td>David Benavidez</td>
+      <td>Virgin Bet</td>
+      <td>1.97</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Agit Kabayel</td>
+      <td>Agit Kabayel</td>
+      <td>Virgin Bet</td>
+      <td>2.38</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Agit Kabayel</td>
+      <td>Daniel Dubois</td>
+      <td>Virgin Bet</td>
+      <td>1.57</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Anthony Joshua</td>
+      <td>Anthony Joshua</td>
+      <td>Virgin Bet</td>
+      <td>2.38</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Anthony Joshua</td>
+      <td>Daniel Dubois</td>
+      <td>Virgin Bet</td>
+      <td>1.57</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Joseph Parker</td>
+      <td>Daniel Dubois</td>
+      <td>Virgin Bet</td>
+      <td>1.80</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Joseph Parker</td>
+      <td>Joseph Parker</td>
+      <td>Virgin Bet</td>
+      <td>2.04</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Moses Itauma</td>
+      <td>Daniel Dubois</td>
+      <td>LiveScore Bet</td>
+      <td>2.33</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Moses Itauma</td>
+      <td>Moses Itauma</td>
+      <td>LiveScore Bet</td>
+      <td>1.61</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Tyson Fury</td>
+      <td>Daniel Dubois</td>
+      <td>LiveScore Bet</td>
+      <td>3.75</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Tyson Fury</td>
+      <td>Tyson Fury</td>
+      <td>LiveScore Bet</td>
+      <td>1.30</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Zhilei Zhang</td>
+      <td>Daniel Dubois</td>
+      <td>Virgin Bet</td>
+      <td>1.52</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Daniel Dubois vs Zhilei Zhang</td>
+      <td>Zhilei Zhang</td>
+      <td>Virgin Bet</td>
+      <td>2.50</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>David Adeleye vs Joseph Parker</td>
+      <td>David Adeleye</td>
+      <td>Virgin Bet</td>
+      <td>2.90</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>David Adeleye vs Joseph Parker</td>
+      <td>Joseph Parker</td>
+      <td>Virgin Bet</td>
+      <td>1.42</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>David Adeleye vs Moses Itauma</td>
+      <td>David Adeleye</td>
+      <td>LiveScore Bet</td>
+      <td>4.60</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>David Adeleye vs Moses Itauma</td>
+      <td>Moses Itauma</td>
+      <td>LiveScore Bet</td>
+      <td>1.21</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Devin Haney vs Ryan Garcia</td>
+      <td>Devin Haney</td>
+      <td>Virgin Bet</td>
+      <td>2.25</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Devin Haney vs Ryan Garcia</td>
+      <td>Ryan Garcia</td>
+      <td>Virgin Bet</td>
+      <td>1.62</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Dmitry Bivol vs Artur Beterbiev</td>
+      <td>Artur Beterbiev</td>
+      <td>Virgin Bet</td>
+      <td>2.33</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Dmitry Bivol vs Artur Beterbiev</td>
+      <td>Dmitry Bivol</td>
+      <td>Virgin Bet</td>
+      <td>1.61</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Dmitry Bivol vs Canelo Álvarez</td>
+      <td>Canelo Álvarez</td>
+      <td>Virgin Bet</td>
+      <td>3.45</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Dmitry Bivol vs Canelo Álvarez</td>
+      <td>Dmitry Bivol</td>
+      <td>Virgin Bet</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Dmitry Bivol vs David Benavidez</td>
+      <td>David Benavidez</td>
+      <td>Virgin Bet</td>
+      <td>3.90</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Dmitry Bivol vs David Benavidez</td>
+      <td>Dmitry Bivol</td>
+      <td>Virgin Bet</td>
+      <td>1.27</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Lawrence Okolie vs Agit Kabayel</td>
+      <td>Agit Kabayel</td>
+      <td>Virgin Bet</td>
+      <td>1.57</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Lawrence Okolie vs Agit Kabayel</td>
+      <td>Lawrence Okolie</td>
+      <td>Virgin Bet</td>
+      <td>2.43</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Manny Pacquiao vs Mario Barrios</td>
+      <td>Manny Pacquiao</td>
+      <td>LiveScore Bet</td>
+      <td>2.12</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Manny Pacquiao vs Mario Barrios</td>
+      <td>Mario Barrios</td>
+      <td>LiveScore Bet</td>
+      <td>1.73</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Agit Kabayel</td>
+      <td>Agit Kabayel</td>
+      <td>Virgin Bet</td>
+      <td>4.90</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Agit Kabayel</td>
+      <td>Oleksandr Usyk</td>
+      <td>Virgin Bet</td>
+      <td>1.20</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Anthony Joshua</td>
+      <td>Anthony Joshua</td>
+      <td>Virgin Bet</td>
+      <td>5.80</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Anthony Joshua</td>
+      <td>Oleksandr Usyk</td>
+      <td>Virgin Bet</td>
+      <td>1.15</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Joseph Parker</td>
+      <td>Joseph Parker</td>
+      <td>Virgin Bet</td>
+      <td>4.25</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Joseph Parker</td>
+      <td>Oleksandr Usyk</td>
+      <td>Virgin Bet</td>
+      <td>1.24</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Moses Itauma</td>
+      <td>Moses Itauma</td>
+      <td>Virgin Bet</td>
+      <td>3.65</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Moses Itauma</td>
+      <td>Oleksandr Usyk</td>
+      <td>Virgin Bet</td>
+      <td>1.29</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Tyson Fury</td>
+      <td>Oleksandr Usyk</td>
+      <td>Virgin Bet</td>
+      <td>1.29</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Oleksandr Usyk vs Tyson Fury</td>
+      <td>Tyson Fury</td>
+      <td>Virgin Bet</td>
+      <td>3.55</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Teofimo Lopéz vs Devin Haney</td>
+      <td>Devin Haney</td>
+      <td>Virgin Bet</td>
+      <td>1.57</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Teofimo Lopéz vs Devin Haney</td>
+      <td>Teofimo Lopéz</td>
+      <td>Virgin Bet</td>
+      <td>2.38</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Terence Crawford vs Errol Spence Jr</td>
+      <td>Errol Spence Jr</td>
+      <td>Virgin Bet</td>
+      <td>5.40</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Terence Crawford vs Errol Spence Jr</td>
+      <td>Terence Crawford</td>
+      <td>Virgin Bet</td>
+      <td>1.16</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Tyson Fury vs Anthony Joshua</td>
+      <td>Anthony Joshua</td>
+      <td>Virgin Bet</td>
+      <td>4.00</td>
+    </tr>
+    <tr>
+      <td>2025-12-31</td>
+      <td>Tyson Fury vs Anthony Joshua</td>
+      <td>Tyson Fury</td>
+      <td>BetOnline.ag</td>
+      <td>1.44</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
