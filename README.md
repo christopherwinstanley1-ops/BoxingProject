@@ -4,8 +4,7 @@ This project contains scripts for working with boxing betting data.  The
 `boxing_app.py` script is a small all-in-one command-line application that
 relies only on Python's standard library, making it easy to run in any
 environment (including Visual Studio) where Python 3.10+ is installed.
-You can launch it from the repository root with `python app.py` or run
-`python boxingproject/boxing_app.py` directly.
+
 The odds and bet files default to `boxing_odds.csv` and `bets.csv` in the
 project directory, but you can override them with `--odds-file` and
 `--bets-file` options.
@@ -21,22 +20,7 @@ The application exposes several sub-commands:
 
 ```bash
 # list upcoming fights
-python app.py fights
 
-# show best odds for each fighter
-python app.py best
-
-# highlight potential value bets (10% above average)
-python app.py value --threshold 0.1
-
-# record a bet and view your history
-python app.py add-bet "Fighter" 2.5 10 Bookmaker
-python app.py summary
-
-# specify custom file locations
-python app.py --odds-file data/odds.csv best
-python app.py --bets-file my_bets.csv summary
-```
 
 The odds data must be stored in `boxingproject/boxing_odds.csv` by default.
 Bet records are saved to `boxingproject/bets.csv` unless a different file is
